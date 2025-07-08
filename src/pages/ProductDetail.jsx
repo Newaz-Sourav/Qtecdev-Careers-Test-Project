@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { Toast } from "../components/Toast";
+//import { Toast } from "./Toast";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const { dispatch } = useCart();
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -17,6 +20,14 @@ export default function ProductDetail() {
 
   
   const isAltTitle = parseInt(id) % 2 === 0;
+
+  function handleclick()
+  {
+    dispatch({ type: "ADD", product });
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 2000);
+
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-purple-50 via-white to-blue-50 px-6 py-12 flex items-center justify-center">
@@ -112,7 +123,7 @@ export default function ProductDetail() {
             </div>
 
             <button
-              onClick={() => dispatch({ type: "ADD", product })}
+              onClick={handleclick }
               className="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold rounded-xl shadow-lg transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300"
               aria-label="Add to cart"
             >
@@ -121,6 +132,10 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
+      <Toast show={showToast} message={`${product.title} added to cart!`} />
+      
     </div>
+
+    
   );
 }
