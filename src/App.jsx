@@ -4,6 +4,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
 import CartSidebar from "./components/CartSidebar";
 import CategoryPage from "./pages/CategoryPage";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -16,7 +17,7 @@ export default function App() {
           <Route path="/product/:id" element={<ProductDetail />} />
            <Route path="/category/:name" element={<CategoryPage></CategoryPage>} />
         </Routes>
-      
+      <Footer></Footer>
     </div>
   );
 }

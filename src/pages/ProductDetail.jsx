@@ -30,7 +30,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-50 via-white to-blue-50 px-6 py-12 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-r from-purple-50 via-white to-blue-50 px-6 py-20 mb-[-3rem] flex items-center justify-center">
       <div className="max-w-6xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-12 p-10">
         
         
@@ -70,12 +70,26 @@ export default function ProductDetail() {
         </div>
 
         {/* Image section */}
-        <div className="flex items-center justify-center bg-white rounded-2xl p-8">
-          <img
-            src={product.image}
-            alt={product.title}
-            className="max-h-96 object-contain"
-          />
+        <div className="flex items-center justify-center rounded-2xl p-8">
+          
+          
+          {product.image ? (
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "";
+                  }}
+                  className="max-h-96 object-contain"
+                />
+              ) : (
+                <div className="w-full h-48 flex items-center justify-center bg-gray-100 rounded-xl text-gray-500 text-center">
+                  Image not available
+                </div>
+              )}
+
+          
         </div>
 
         {/* Details section */}
