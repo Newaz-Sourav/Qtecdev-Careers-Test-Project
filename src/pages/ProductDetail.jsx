@@ -26,18 +26,23 @@ export default function ProductDetail() {
         <div>
           {isAltTitle ? (
             <div>
-              <p className="text-indigo-600 font-semibold text-sm uppercase tracking-widest mb-1">
-                Limited Time Offer
-              </p>
-              <h1 className="text-4xl font-extrabold text-gray-900 mb-2 leading-tight flex items-center gap-2">
-                <span>🔥</span>
-                {product.title}
-                <span className="bg-yellow-300 text-yellow-900 px-2 py-1 rounded text-xs font-bold select-none">Hot</span>
-              </h1>
-              <p className="text-gray-600 italic mb-6">
-                Get yours now with exclusive discount!
-              </p>
-            </div>
+  <p className="text-indigo-600 font-semibold text-xs sm:text-sm uppercase tracking-widest mb-1">
+    Limited Time Offer
+  </p>
+
+  <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-900 mb-2 leading-tight flex flex-wrap items-center gap-2">
+    <span>🔥</span>
+    <span className="break-words">{product.title}</span>
+    <span className="bg-yellow-300 text-yellow-900 px-2 py-1 rounded text-[10px] sm:text-xs font-bold select-none">
+      Hot
+    </span>
+  </h1>
+
+  <p className="text-gray-600 italic text-sm sm:text-base mb-6">
+    Get yours now with exclusive discount!
+  </p>
+</div>
+
           ) : (
             <div>
               <h1 className="text-5xl font-bold text-blue-900 mb-3">
