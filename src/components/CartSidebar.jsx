@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, forwardRef } from "react";
 import { useCart } from "../context/CartContext";
 import CheckoutModal from "./CheckoutModal";
 
-export default function CartSidebar() {
+const CartSidebar=forwardRef((props,ref)=>{
   const { cart, dispatch } = useCart();
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -11,11 +11,17 @@ export default function CartSidebar() {
     window.toggleCart = () => setIsOpen((prev) => !prev);
   }, []);
 
+  const sendcount = ref;
+
+
+
   const total = cart
     .reduce((sum, item) => sum + item.price * item.quantity, 0)
     .toFixed(2);
 
   const totalItems = cart.reduce((count, item) => count + item.quantity, 0);
+
+  sendcount.current=totalItems;
 
   return (
     <div>
@@ -120,4 +126,7 @@ export default function CartSidebar() {
       {showModal && <CheckoutModal onClose={() => setShowModal(false)} />}
     </div>
   );
-}
+})
+
+export default CartSidebar
+
