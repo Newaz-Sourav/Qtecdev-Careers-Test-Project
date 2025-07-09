@@ -23,45 +23,46 @@ Live deployed version: qtecdev-careers-test-project.vercel.app
 Repository: https://github.com/Newaz-Sourav/Qtecdev-Careers-Test-Project 
 
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-- **Frontend**: React.js, javaScript  
-- **Styling**: Tailwind  
-- **Bundler / Toolchain**: Vite    
-- **Deployment**: Vercel
-
+- *Frontend:* React.js  
+- *Language:* JavaScript  
+- *Styling:* Tailwind CSS  
+- *Bundler / Toolchain:* Vite  
+- *Backend / API:* [FakeStore API](https://fakestoreapi.com/)  
+- *Deployment:* Vercel
 ## 🧩 Features / Pages
 
 ### 1. Home Page
 - Displays a grid of at least **6 products**
-- Each product card includes:
-  - Image placeholder
-  - Product title
-  - Price
-  - “Add to Cart” button
+- Each product card includes: <br/>
+  ⟶ Image placeholder <br/>
+  ⟶ Product title <br/>
+  ⟶ Price <br/>
+  ⟶ “Add to Cart” button <br/>
 - Clicking a product navigates to the Product Detail Page
 
 ### 2. Product Detail Page
-- Shows full product info:
-  - Larger image
-  - Title
-  - Description
-  - Price
-  - “Add to Cart” button
+- Shows full product info: <br/>
+  ⟶ Larger image <br/>
+  ⟶ Title<br/>
+  ⟶ Description<br/>
+  ⟶ Price<br/>
+  ⟶ “Add to Cart” button<br/>
 
 ### 3. Cart Sidebar
 - Slide-in/out sidebar accessible via "Cart" link or icon in navbar
-- Shows added products with:
-  - Quantity controls (increment / decrement)
-  - Line item price and quantity
+- Shows added products with:<br/>
+  ⟶ Quantity controls (increment / decrement)<br/>
+  ⟶ Line item price and quantity<br/>
 - Displays total amount at bottom
 - “Checkout” button to open modal
 
 ### 4. Checkout Modal
-- Popup modal form with:
-  - Name field
-  - Email field
-  - Address field
+- Popup modal form with:<br/>
+  ⟶ Name field<br/>
+  ⟶ Email field<br/>
+  ⟶ Address field<br/>
 - Submit button to simulate placing an order (no real API calls)
 
 ## 📐 Design
@@ -72,7 +73,9 @@ Repository: https://github.com/Newaz-Sourav/Qtecdev-Careers-Test-Project
 
 ## 📝 How to Run Locally
 
-1. Clone the repository  
-   ```bash
-   git clone <your-github-repo-url>
-   cd <project-folder>
+```bash
+git clone https://github.com/Newaz-Sourav/Qtecdev-Careers-Test-Project.git
+cd Qtecdev-Careers-Test-Project
+npm install
+npm run dev
+
