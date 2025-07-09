@@ -26,15 +26,25 @@ export default function Navbar({ nav_val }) {
               <Home size={28} strokeWidth={2} />
             </Link>
 
-            {/* Cart Button */}
             <button
-              onClick={() => window.toggleCart()}
-              className="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg transition duration-200"
-            >
-              <ShoppingCart size={20} />
-              {nav_val > 0 && <span>({nav_val})</span>}
-              <span>Cart</span>
-            </button>
+  onClick={() => window.toggleCart()}
+  className="relative inline-flex items-center bg-gradient-to-r from-pink-500 to-purple-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold shadow-lg transition-all duration-300"
+>
+  {/* Cart Icon with badge */}
+  <div className="relative">
+    <ShoppingCart size={22} className="group-hover:scale-110 transition-transform duration-200" />
+    {nav_val > 0 && (
+      <span className="absolute -top-2 -right-2 bg-white text-pink-600 text-xs font-bold px-1.5 py-0.5 rounded-full shadow-sm">
+        {nav_val}
+      </span>
+    )}
+  </div>
+
+  {/* Cart Text */}
+  <span className="ml-2">Cart</span>
+</button>
+
+
           </div>
         </div>
       </div>
